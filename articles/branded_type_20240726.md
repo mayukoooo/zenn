@@ -40,7 +40,7 @@ displayUser(post)
 
 この結果、`displayUser` 関数に `Post` 型のオブジェクトを渡してもコンパイルエラーが発生しません🤔
 
-このような問題を解決するために、**branded type** という技法があります。
+このような問題を解決するために、**branded type** というテクニックがあります。
 
 
 ## 2. branded typeとは
@@ -79,16 +79,9 @@ print(post) // Error: Argument of type 'Post' is not assignable to parameter of 
 ```
 このコードは、`UserId` 型と `PostId` 型それぞれに `__brand` というプロパティを追加し、プロパティのキーとして、それぞれの型の意味を示す文字列（`"UserId"`, `"PostId"`）を指定しています。
 
-**このように、`UserId` 型と `PostId` 型にはそれぞれ固有の意味のタグが付与されているため、`User` 型と `Post` 型は互換性がなくなり、コンパイルエラーが発生するようになります。**
+このように、**`UserId` 型と `PostId` 型にはそれぞれ固有の意味のタグが付与されているため、`User` 型と `Post` 型は互換性がなくなり、コンパイルエラーが発生する**ようになります。
 
-
-### 2.1 branded typeのメリット
-他にも、branded type のメリットとして、以下のようなものがあります。
-- **安全性と正しさ**：
-  - コンパイル時の安全性をチェックすることでデバッグ時間を短縮し、実行時のエラーを防ぐことができる
-    - 実際のランタイム（プログラムが実行されるとき）には存在せず、コンパイル時にのみ存在する
-- **保守性**
-  - ブランド化された型を使用することで、開発者は自分の意図をより明確に伝えることができ、誤解や変数の誤用を避けることができる
+コンパイル時の安全性をチェックすることでデバッグ時間を短縮し、実行時のエラーを防ぐことができます。尚、branded type は実際のランタイム（プログラムが実行されるとき）には存在せず、コンパイル時にのみ存在しています。
 
 ## 3. branded typeの実装方法
 ### 3.1 シンボルを使う
@@ -98,17 +91,16 @@ print(post) // Error: Argument of type 'Post' is not assignable to parameter of 
 
 以下のコードを見てみましょう。
 ```typescript
-type Brand<K, T> = K & { __brand: T }
-
-type UserId = Brand<string, "UserId"> // UserId が固有のシンボルになる
-type PostId = Brand<string, "PostId"> // PostId が固有のシンボルになる
-
-const createUserId = (id: string): UserId => id as UserId
-const createPostId = (id: string): PostId => id as PostId
+// プロパティへの読み取りアクセスを防ぐために、Brand ユーティリティを独自のファイルに記述する
+declare const __brand: unique symbol
+export type Brand<K, T> = K & { [__brand]: T }
+```
+```typescript
+type UserId = Brand<string, "UserId">
 ```
 ここでは、`unique symbol` を使用して、ブランド・プロパティを定義しています。
 
-ブランド・プロパティに固有のシンボルを使用することで、プロパティが隠され、混乱を避けることができます。
+**ブランド・プロパティに固有のシンボルを使用することで、インテリセンスからプロパティが隠され、混乱を避けることができます。**
 
 <br />
 
