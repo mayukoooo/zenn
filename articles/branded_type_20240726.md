@@ -159,5 +159,6 @@ const userId: UserId = "userId" as UserId
 
 
 ## 参考文献
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [Branded Types in TypeScript](https://dev.to/username/branded-types-in-typescript-1kp8)
+- [Improve Runtime Type Safety with Branded Types in TypeScript](https://egghead.io/blog/using-branded-types-in-typescript)
+- [TypeScriptと構造的型付け](https://typescriptbook.jp/reference/values-types-variables/structural-subtyping#%E6%A7%8B%E9%80%A0%E7%9A%84%E5%9E%8B%E4%BB%98%E3%81%91%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9)
+- [Branded Type について理解する](https://qiita.com/yamatai12/items/e972833b3105883202a3)
