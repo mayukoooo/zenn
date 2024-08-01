@@ -27,18 +27,18 @@ id: "1",
 name: "post"
 } as Post
 
-const displayUser = (user: User) => {
+const print = (user: User) => {
   console.log(user)
 }
 
 // Use 型と Post 型は構造が同じであるため、同じ型として扱われる
-// そのため、displayUser 関数に post を渡すことができる
-displayUser(post)
+// そのため、print 関数に post を渡すことができる
+print(post)
 ```
 
 この例では、`User` 型と `Post` 型が同じ構造（`id` と `name` プロパティを持つ）であるため、TypeScriptはこれらを互換性のある型とみなします。
 
-この結果、`displayUser` 関数に `Post` 型のオブジェクトを渡してもコンパイルエラーが発生しません🤔
+この結果、`print` 関数に `Post` 型のオブジェクトを渡してもコンパイルエラーが発生しません🤔
 
 このような問題を解決するために、**branded type** というテクニックがあります。
 
