@@ -33,7 +33,7 @@ const print = (user: User) => {
   console.log(user)
 }
 
-// Use 型と Post 型は構造が同じであるため、同じ型として扱われる
+// User 型と Post 型は構造が同じであるため、同じ型として扱われる
 // そのため、print 関数に post を渡すことができる
 print(post)
 ```
