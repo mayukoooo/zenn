@@ -48,7 +48,7 @@ branded typeは、構造的片付けの問題を解決するための手法の1�
 
 **型の意味をタグ付けすることで型の一意性を保ち、より厳密に型の使用を制約する**ことができます。
 
-例えば、以下のコードを見てみましょう。
+以下のコードを見てみましょう。
 ```typescript
 type UserId = string & { __brand: "UserId" }  // "UserId" という意味のタグを付与
 type PostId = string & { __brand: "PostId" }　// "PostId" という意味のタグを付与
