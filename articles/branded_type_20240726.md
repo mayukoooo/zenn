@@ -50,8 +50,8 @@ branded typeは、構造的片付けの問題を解決するための手法の1�
 
 以下のコードを見てみましょう。
 ```typescript
-type UserId = string & { __brand: "UserId" }  // "UserId" という意味のタグを付与
-type PostId = string & { __brand: "PostId" }　// "PostId" という意味のタグを付与
+type UserId = string & { __brand: "UserId" }  // __brand というダミープロパティに "UserId" キーを付与
+type PostId = string & { __brand: "PostId" }　// __brand というダミープロパティに "PostId" キーを付与
 
 type User = {
   id: UserId
