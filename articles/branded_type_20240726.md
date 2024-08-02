@@ -22,10 +22,10 @@ type Post = {
   name: string
 }
 
-const post = {
+const post: Post = {
   id: "1",
   name: "post"
-} as Post
+}
 
 const print = (user: User) => {
   console.log(user)
