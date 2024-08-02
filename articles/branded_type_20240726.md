@@ -23,8 +23,8 @@ type Post = {
 }
 
 const post = {
-id: "1",
-name: "post"
+  id: "1",
+  name: "post"
 } as Post
 
 const print = (user: User) => {
@@ -113,7 +113,7 @@ branded type をプロジェクトで運用するにあたって、疑問に思�
 
 それは、「**ブランド内のプロパティ名が将来的に被る可能性がなくはないよな...?**」という疑問です。
 
-例えば、以下のコードでは `QuestionId` と `UserId2` が同じプロパティ名 `"userId"` を使用しているため、同じ型として扱われてしまいます。 
+例えば、以下のコードでは `UserId` と `UserId2` が同じプロパティ名 `"userId"` を使用しているため、同じ型として扱われてしまいます。 
 
 ```typescript
 declare const __brand: unique symbol
@@ -135,10 +135,10 @@ const print = (id: UserId2) => {
 print(userId2)
 print(userId)
 ```
-上記のように意図せず型の一意性が損なわれてしまう可能性があると感じ、運用上の問題が発生する可能性があると感じました🤔
+上記のように意図せず型の一意性が損なわれてしまうため、運用上の問題が発生する可能性があります🤔
 
 ### 3.3【解決】ブランド内のプロパティ名を完全に一意にする
-そこでフロントエンドチームでは、ブランド内のプロパティ名が被る可能性を完全に排除するために、都度ブランドを定義する方法を採用することにしました。
+そこでフロントエンドチームでは、ブランド内のプロパティ名が重複する可能性を完全に排除するために、都度ブランドを定義する方法を採用することにしました。
 ```typescript
 export type BrandedType<Type, Id extends symbol> = Type & { [K in Id]: never }
 
