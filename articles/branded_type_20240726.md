@@ -119,11 +119,13 @@ branded type をプロジェクトで運用するにあたって、疑問に思�
 declare const __brand: unique symbol
 type Brand<B> = { [__brand]: B }
 export type BrandedType<Type, State extends string> = Brand<State> & Type
-
+```
+```typescript
 // UserId と UserId2 は同じブランド・キー "userId" を使用しているので同じ型として扱われる
 export type UserId = BrandedType<string, "userId">
 export type UserId2 = BrandedType<string, "userId">
-
+```
+```typescript
 const userId: UserId = "userId" as UserId
 const userId2: UserId2 = "userId" as UserId2
 
@@ -141,10 +143,12 @@ print(userId)
 そこでフロントエンドチームでは、ブランド内のキーが重複する可能性を完全に排除するために、都度ブランドを定義する方法を採用することにしました。
 ```typescript
 export type BrandedType<Type, Id extends symbol> = Type & { [K in Id]: never }
-
+```
+```typescript
 declare const brand: unique symbol
 export type UserId = BrandedType<string, typeof brand>
-
+```
+```typescript
 const userId: UserId = "userId" as UserId
 ```
 こうすることで型の一意性を保つことができると同時に、管理する手間を減らすことができます。
