@@ -23,8 +23,8 @@ type Post = {
 }
 
 const post = {
-id: "1",
-name: "post"
+  id: "1",
+  name: "post"
 } as Post
 
 const print = (user: User) => {
