@@ -108,19 +108,19 @@ type UserId = Brand<string, "UserId">
 
 **ブランド・プロパティに固有のシンボルを使用することで、インテリセンスからプロパティが隠され、混乱を避けることができます。**
 
-### 3.2【疑問】プロパティキーが被る場合もあるのでは...🤔？
+### 3.2【疑問】ブランド内のキーが重複する場合もあるのでは...🤔？
 branded type をプロジェクトで運用するにあたって、疑問に思ったことがありました。
 
-それは、「**ブランド内のプロパティ名が将来的に被る可能性がなくはないよな...?**」という疑問です。
+それは、「**ブランド内のキーが将来的に被る可能性がなくはないよな...?**」という疑問です。
 
-例えば、以下のコードでは `UserId` と `UserId2` が同じプロパティ名 `"userId"` を使用しているため、同じ型として扱われてしまいます。 
+例えば、以下のコードでは `UserId` と `UserId2` が同じキー `"userId"` を使用しているため、同じ型として扱われてしまいます。 
 
 ```typescript
 declare const __brand: unique symbol
 type Brand<B> = { [__brand]: B }
 export type BrandedType<Type, State extends string> = Brand<State> & Type
 
-// UserId と UserId2 は同じプロパティ名 "userId" を使用しているので同じ型として扱われる
+// UserId と UserId2 は同じブランド・キー "userId" を使用しているので同じ型として扱われる
 export type UserId = BrandedType<string, "userId">
 export type UserId2 = BrandedType<string, "userId">
 
@@ -137,8 +137,8 @@ print(userId)
 ```
 上記のように意図せず型の一意性が損なわれてしまうため、運用上の問題が発生する可能性があります🤔
 
-### 3.3【解決】ブランド内のプロパティ名を完全に一意にする
-そこでフロントエンドチームでは、ブランド内のプロパティ名が重複する可能性を完全に排除するために、都度ブランドを定義する方法を採用することにしました。
+### 3.3【解決】ブランド内のキーを完全に一意にする
+そこでフロントエンドチームでは、ブランド内のキーが重複する可能性を完全に排除するために、都度ブランドを定義する方法を採用することにしました。
 ```typescript
 export type BrandedType<Type, Id extends symbol> = Type & { [K in Id]: never }
 
