@@ -4,6 +4,7 @@ emoji: "🚀" # アイキャッチとして使われる絵文字（1文字だけ
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["フロントエンド", "typescript", "brandedtype"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: false # 公開設定（falseにすると下書き）
+publication_name: "ourly_tech_blog"
 ---
 ## 1. TypeScript の問題点
 TypeScriptは、型システムとして構造的型付けを採用しています。
