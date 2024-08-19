@@ -162,4 +162,6 @@ Raindrop の地味に良いところは[公式ドキュメント](https://help.r
 
 https://zenn.dev/fumi_sagawa/articles/2ff5fd9c03fbcd
 
+https://zenn.dev/ichigoooo/articles/5111e8a96a4c19
+
 今回誰かに教えたくなる程の作業効率化ツールを教えてくださった [akky-xxxx](https://github.com/akky-xxxx) さんには感謝申し上げます。ありがとうございました🙏
