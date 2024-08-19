@@ -47,7 +47,7 @@ MeetingBar を[このリンク](https://apps.apple.com/us/app/meetingbar/id15324
 
 アプリを起動すると、こんな感じでメニューバーに MTG 予定が表示されます。
 
-${勝手に起動するgif}
+![](/images/meetingbar_quick_menu.png)
 
 #### 1.3.2. MeetingBar の設定
 ここでは、MeetingBar おすすめの設定項目をご紹介していきます😽
