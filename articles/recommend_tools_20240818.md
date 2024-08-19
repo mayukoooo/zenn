@@ -160,4 +160,6 @@ Raindrop の地味に良いところは[公式ドキュメント](https://help.r
 
 本当は Raycast もおすすめにノミネートしたかったのですが、下記の記事で十分に紹介されていたので割愛しました。Raycast 最高なので是非使ってみてください🫶
 
+https://zenn.dev/fumi_sagawa/articles/2ff5fd9c03fbcd
+
 今回誰かに教えたくなる程の作業効率化ツールを教えてくださった [akky-xxxx](https://github.com/akky-xxxx) さんには感謝申し上げます。ありがとうございました🙏
