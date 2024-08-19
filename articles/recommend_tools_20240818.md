@@ -92,6 +92,8 @@ MTG を新規作成した時、すぐに MeetingBar に反映されないこと�
 ### 2.1. Biscuit とは
 Biscuit は、目的のアプリをすぐに呼び出して利用できるようにするためのブラウザです。
 
+https://eatbiscuit.com/ja
+
 ### 2.2. Biscuit の良さ
 Biscuit の良さは、**アプリごとに隔離された空間を作れる**ことです！
 
