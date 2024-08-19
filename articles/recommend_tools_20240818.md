@@ -2,7 +2,7 @@
 title: "非エンジニアに絶対に使ってほしい！作業効率化ツール3選" # 記事のタイトル
 emoji: "🪄" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
-topics: ["ツール", "作業効率化", ""] # タグ。["markdown", "rust", "aws"]のように指定する
+topics: ["ツール", "作業効率化"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: false # 公開設定（falseにすると下書き）
 publication_name: "ourly_tech_blog"
 ---
