@@ -16,7 +16,6 @@ publication_name: "ourly_tech_blog"
 1. MTG を絶対に忘れなくなる「MeetingBar」
 2. アプリごとに隔離された空間を作るブラウザ「Biscuit」
 3. 永久保存可能なブックマークマネージャー「Raindrop」
-4. PC 操作が爆速になる「Raycast」
 
 ## 1. MTG を絶対に忘れなくなる「MeetingBar」
 ![](/images/meetingbar.png)
