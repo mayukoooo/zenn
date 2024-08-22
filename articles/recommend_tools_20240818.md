@@ -113,7 +113,8 @@ GitHub のページに遷移するので、ここからダウンロードして�
 
 #### 2.3.2. Biscuit の設定
 Biscuit を起動すると、こんな感じでアプリが表示されるので、グループやセッションを分けたいアプリを追加したら準備完了です！
-![](/images/biscuit_setting.png)
+
+![](/images/biscuit_home.png)
 
 ![](/images/biscuit_app.png)
 
